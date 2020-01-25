@@ -1,6 +1,7 @@
 #!/bin/sh
-# mac-ssh-askpass v1.0.0 - Asks for passphrases in the GUI on macOS.
-# Odin Kroeger, 2018
+# mac-ssh-askpass v1.0.1b - Asks for passphrases in the GUI on macOS.
+#
+# Odin Kroeger 2018, 2020
 #
 # This is free software released into the public domain.
 #
@@ -12,15 +13,18 @@
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
-CPID=$PPID
-CCOMM=$(ps -o comm=, $CPID)
+unset IFS
+PATH=/bin:/usr/bin
+PATH="$(getconf PATH):$PATH"
+CALLER_PID="$PPID" CALLER_NAME="$(ps -o comm=, $PPID)"
 
 exec osascript - "$@" <<EOF
 on run argv
     set text item delimiters to " "
     set prompt to argv as text
-    set reply to display dialog prompt ¬
-        default answer "" with title "$CCOMM ($CPID)" with hidden answer
+    set reply to display dialog ¬
+        "Process $CALLER_NAME (process ID $CALLER_PID) asks:\n" & prompt ¬
+        default answer "" with title "$(basename "$0")" with hidden answer
     set pass to text returned of reply
     return pass
 end run
