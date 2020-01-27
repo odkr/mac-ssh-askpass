@@ -32,16 +32,19 @@ It should work on any version of macOS.
 
 2. Copy **mac-ssh-askpass** to a directory in your `PATH`.
 
-3. Make **mac-ssh-askpass** it executable.
+3. Make it executable.
 
 You can do all of this by saying:
 
 ```sh
 curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.0.0 | tar -xz
-sudo mkdir -pm 0755 /usr/local/bin
-sudo cp mac-ssh-askpass-1.0.0/mac-ssh-askpass /usr/local/bin
-sudo chmod +x /usr/local/bin/mac-ssh-askpass
+sudo mkdir -pm 0755 /opt/mac-ssh-askpass/bin
+sudo cp mac-ssh-askpass-1.0.0/mac-ssh-askpass /opt/mac-ssh-askpass/bin
+sudo chmod +x /opt/mac-ssh-askpass/bin/mac-ssh-askpass
+printf '\nexport PATH="$PATH:/opt/mac-ssh-askpass/bin"\n' >> ~/.bash_profile
 ```
+
+TODO should all go to /opt
 
 You can simply copy-paste the above code as a whole into a terminal.
 
