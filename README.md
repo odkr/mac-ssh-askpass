@@ -44,8 +44,6 @@ sudo chmod +x /opt/mac-ssh-askpass/bin/mac-ssh-askpass
 printf '\nexport PATH="$PATH:/opt/mac-ssh-askpass/bin"\n' >> ~/.bash_profile
 ```
 
-TODO should all go to /opt
-
 You can simply copy-paste the above code as a whole into a terminal.
 
 ## DOCUMENTATION
