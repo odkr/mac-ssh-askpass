@@ -7,9 +7,6 @@ and prints that input to STDOUT. In short, it conforms to the so-called
 [OpenSSH](https://www.openssh.com/) and other tools that understand that
 protocol.
 
-**mac-ssh-askpass** is absurdly simple. So simple that I wonder why I couldn't
-find anything like it.
-
 ## SYNOPSIS
 
 ```sh
@@ -28,7 +25,7 @@ You use **mac-ssh-askpass** **at your own risk**. You have been warned.
 It should work on any version of macOS.
 
 1. Download the repository from:
-   <https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.0.0>
+   <https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b>
 
 2. Copy **mac-ssh-askpass** to a directory in your `PATH`.
 
@@ -37,10 +34,9 @@ It should work on any version of macOS.
 You can do all of this by saying:
 
 ```sh
-curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.0.0 | tar -xz
-sudo mkdir -pm 0755 /opt/mac-ssh-askpass/bin
-sudo cp mac-ssh-askpass-1.0.0/mac-ssh-askpass /opt/mac-ssh-askpass/bin
-sudo chmod +x /opt/mac-ssh-askpass/bin/mac-ssh-askpass
+curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b | tar -xz
+sudo chown -R root:wheel mac-ssh-askpass-1.1.0b
+sudo mv mac-ssh-askpass-1.1.0b /opt/mac-ssh-askpass
 printf '\nexport PATH="$PATH:/opt/mac-ssh-askpass/bin"\n' >> ~/.bash_profile
 ```
 
