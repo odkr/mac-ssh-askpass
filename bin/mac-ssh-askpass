@@ -13,6 +13,11 @@
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
+if [ $# -eq 0 ]; then
+    printf 'Usage: mac-ssh-askpass PROMPT.\n' >&2
+    exit 64
+fi
+
 unset IFS
 PATH=/bin:/usr/bin
 PATH="$(getconf PATH):$PATH"
@@ -23,7 +28,7 @@ on run argv
     set text item delimiters to " "
     set prompt to argv as text
     set reply to display dialog ¬
-        "The programme $CALLER_NAME (process ID $CALLER_PID) asks:\n" & prompt ¬
+        "$CALLER_NAME (process ID $CALLER_PID) asks:\n" & prompt ¬
         default answer "" with title "$(basename "$0")" with hidden answer
     set pass to text returned of reply
     return pass
