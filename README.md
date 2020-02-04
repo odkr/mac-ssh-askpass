@@ -1,21 +1,27 @@
 # mac-ssh-askpass
 
 **mac-ssh-askpass** prompts the user for input, typically a passphrase,
-with an [Aqua](https://en.wikipedia.org/wiki/Aqua_(user_interface)) dialogue,
-and prints that input to STDOUT. In short, it conforms to the so-called
+using an [Aqua](https://en.wikipedia.org/wiki/Aqua_(user_interface)) dialogue,
+and prints that input to `STDOUT`. In other words, it implements the so-called
 [SSH Askpass Protocol](https://man.openbsd.org/ssh-add). You can use it with
 [OpenSSH](https://www.openssh.com/) and other tools that understand that
 protocol.
 
+
 ## SYNOPSIS
 
+You will typically set an environment variable, for example, `SSH_ASKPASS`, to
+tell a utility to use **mac-ssh-askpass**, rather than invoking it directly.
+
+For example:
+
 ```sh
-SSH_ASKPASS=mac-ssh-askpass ssh-add </dev/null
+SSH_ASKPASS=mac-ssh-askpass DISPLAY= ssh-add </dev/null
 ```
 
-This invokes **ssh-add**, instructing it to use **mac-ssh-askpass** to query
-you for passphrases. You will typically set an environment variable to
-tell a utility to use **mac-ssh-askpass**, rather than invoking it directly.
+The command above invokes **ssh-add**,
+but instructs it to use **mac-ssh-askpass** to query you for passphrases.
+
 
 ## INSTALLATION
 
@@ -29,9 +35,9 @@ It should work on any version of macOS.
 
 2. Copy **mac-ssh-askpass** to a directory in your `PATH`.
 
-3. Make it executable.
+3. Make sure it's owned by the superuser (optional).
 
-You can do all of this by saying:
+You can do all of this by:
 
 ```sh
 curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b | tar -xz
@@ -40,11 +46,12 @@ sudo mv mac-ssh-askpass-1.1.0b /opt/mac-ssh-askpass
 printf '\nexport PATH="$PATH:/opt/mac-ssh-askpass/bin"\n' >> ~/.bash_profile
 ```
 
-You can simply copy-paste the above code as a whole into a terminal.
+If you didn't change your default shell,
+you can simply copy-paste the code above into a terminal as a whole.
 
 ## DOCUMENTATION
 
-You're reading it.
+You're reading it. There isn't a whole lot to say.
 
 
 ## CONTACT
