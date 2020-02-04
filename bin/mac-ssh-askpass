@@ -1,5 +1,5 @@
 #!/bin/sh
-# mac-ssh-askpass v1.0.1b - Asks for passphrases in the GUI on macOS.
+# mac-ssh-askpass v1.1.0b - Asks for passphrases in the GUI on macOS.
 #
 # Odin Kroeger 2018, 2020
 #
@@ -23,7 +23,7 @@ on run argv
     set text item delimiters to " "
     set prompt to argv as text
     set reply to display dialog ¬
-        "Process $CALLER_NAME (process ID $CALLER_PID) asks:\n" & prompt ¬
+        "The programme $CALLER_NAME (process ID $CALLER_PID) asks:\n" & prompt ¬
         default answer "" with title "$(basename "$0")" with hidden answer
     set pass to text returned of reply
     return pass
