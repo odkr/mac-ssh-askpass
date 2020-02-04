@@ -31,7 +31,7 @@ You use **mac-ssh-askpass** **at your own risk**. You have been warned.
 It should work on any version of macOS.
 
 1. Download the repository from:
-   <https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b>
+   <https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b2>
 
 2. Copy **mac-ssh-askpass** to a directory in your `PATH`.
 
@@ -40,9 +40,9 @@ It should work on any version of macOS.
 You can do all of this by:
 
 ```sh
-curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b | tar -xz
-sudo chown -R root:wheel mac-ssh-askpass-1.1.0b
-sudo mv mac-ssh-askpass-1.1.0b /opt/mac-ssh-askpass
+curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b2 | tar -xz
+sudo chown -R root:wheel mac-ssh-askpass-1.1.0b2
+sudo mv mac-ssh-askpass-1.1.0b2 /opt/mac-ssh-askpass
 printf '\nexport PATH="$PATH:/opt/mac-ssh-askpass/bin"\n' >> ~/.bash_profile
 ```
 
