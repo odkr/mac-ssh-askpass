@@ -47,10 +47,11 @@ You can do all of this by:
 ```sh
 curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b3 | tar -xz
 sh mac-ssh-askpass-1.1.0b3/install.sh
+
 ```
 
 If you didn't change your default shell,
-you can simply copy-paste the code above into a terminal as a whole.
+you can simply copy-paste the code above into a terminal.
 
 ## DOCUMENTATION
 
