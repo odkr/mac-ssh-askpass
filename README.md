@@ -41,11 +41,7 @@ You can do all of this by:
 
 ```sh
 curl https://codeload.github.com/odkr/mac-ssh-askpass/tar.gz/v1.1.0b2 | tar -xz
-sudo mkdir -p /opt/mac-ssh-askpass
-sudo cp -r mac-ssh-askpass-1.1.0b2/* /opt/mac-ssh-askpass
-sudo chown -R root:wheel /opt/mac-ssh-askpass
-grep -q 'PATH=.*:/opt/mac-ssh-askpass/bin' ~/.bash_profile || \
-    printf '\nexport PATH="$PATH:/opt/mac-ssh-askpass/bin"\n' >> ~/.bash_profile
+sh mac-ssh-askpass-1.1.0b2/install.sh
 ```
 
 If you didn't change your default shell,

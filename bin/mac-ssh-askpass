@@ -1,5 +1,5 @@
 #!/bin/sh
-# mac-ssh-askpass v1.1.0b2 - Asks for passphrases in the GUI on macOS.
+# mac-ssh-askpass v1.1.0b3 - Asks for passphrases in the GUI on macOS.
 #
 # Odin Kroeger 2018, 2020
 #
