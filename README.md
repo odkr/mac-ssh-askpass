@@ -7,6 +7,11 @@ and prints that input to `STDOUT`. In other words, it implements the so-called
 [OpenSSH](https://www.openssh.com/) and other tools that understand that
 protocol.
 
+If you're reading this on GitHub, keep in mind that it applies to the
+most recent *commit*, which may *not* be most recent *release*. Consult
+the README.md and the [source](bin/mac-ssh-askpass) of the release
+that you've downloaded.
+
 
 ## SYNOPSIS
 
