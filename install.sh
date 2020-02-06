@@ -15,6 +15,7 @@ install.sh: I may have to ask you for your password.
 install.sh: ---------------------------------------------------
 EOF
 
+# shellcheck disable=2034,2162
 read DUMMY
 
 sudo -E sh -c 'set -Ceux
