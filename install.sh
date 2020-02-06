@@ -7,12 +7,12 @@ set -Cefu
 cd -P "$(dirname "$0")" || exit
 
 cat <<EOF
-install.sh: ---------------------------------------------------
+install.sh: ------------------------------------------------------
 install.sh: Copying mac-ssh-askpass to: $INSTALL_DIR
 install.sh:
 install.sh: Press <Return> to confirm and <Ctrl>-<C> to cancel.
-install.sh: I may have to ask you for your password.
-install.sh: ---------------------------------------------------
+install.sh: I will likely have to ask you for your login password.
+install.sh: ------------------------------------------------------
 EOF
 
 # shellcheck disable=2034,2162
