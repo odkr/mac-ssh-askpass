@@ -21,7 +21,13 @@ read DUMMY
 sudo -E sh -c 'set -Ceux
                mkdir -p            "$INSTALL_DIR"
                cp    -r *          "$INSTALL_DIR"
-               chown -R root:wheel "$INSTALL_DIR"' || exit
+               chown -R root:wheel "$INSTALL_DIR"' || INSTALL_STATUS="$?"
+
+if [ "${INSTALL_STATUS-0}" -ne 0 ]; then
+    printf 'install.sh: Installation failed. You may want to delete %s.\n' \
+           "$INSTALL_DIR" >&2
+    exit 69
+fi
 
 [ -e ~/.bash_profile ]                             || exit 0
 grep -q "PATH=.*:$INSTALL_DIR/bin" ~/.bash_profile && exit 0
