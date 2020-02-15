@@ -13,7 +13,7 @@
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
-if [ $# -eq 0 ]; then
+if [ "$#" -eq 0 ]; then
     printf 'Usage: mac-ssh-askpass PROMPT.\n' >&2
     exit 64
 fi
