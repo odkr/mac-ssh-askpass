@@ -24,15 +24,15 @@ For example:
 SSH_ASKPASS=mac-ssh-askpass DISPLAY= ssh-add </dev/null
 ```
 
-The command above invokes **ssh-add**,
-but instructs it to use **mac-ssh-askpass** to query you for passphrases.
+The code above invokes **ssh-add** and tells it to use
+**mac-ssh-askpass** to query you for passphrases.
 
 
 ## INSTALLATION
 
 You use **mac-ssh-askpass** **at your own risk**. You have been warned.
 
-**mac-ssh-askpass** is a simple AppleScript.
+**mac-ssh-askpass** is a simple AppleScript wrapped in a simple Bourne shell script.
 It should work on any version of macOS.
 
 1. Download the repository from:
