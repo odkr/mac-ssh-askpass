@@ -10,7 +10,7 @@ cat <<EOF
 install.sh: ------------------------------------------------------
 install.sh: Copying mac-ssh-askpass to: $INSTALL_DIR
 install.sh:
-install.sh: Press <Return> to confirm and <Ctrl>-<C> to cancel.
+install.sh: Press <Return> to confirm and <Ctrl>-<c> to cancel.
 install.sh: I will likely have to ask you for your login password.
 install.sh: ------------------------------------------------------
 EOF
